@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply and Win</title>
+    
+    <meta name="description" content="Apply now and stand a chance to win amazing prizes. Limited slots available!">
+
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
+    <meta name="theme-color" content="#41c564">
+
+    <meta property="og:title" content="Apply & Win">
+    <meta property="og:description" content="Submit your application now and stand a chance to win.">
+    <meta property="og:image" content="logo.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mobilegigo.com/">
+
+    <meta name="theme-color" content="#41c564">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+   
+    <link rel="preload" href="style.css" as="style">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+         <img src="logo.png" width="150">
+         <h2>How much do you need?</h2>
+         <div class="options" id="options">
+            <div class="option">₦2,000</div>
+            <div class="option">₦5,000</div>
+            <div class="option">₦10,000</div>
+            <div class="option">₦20,000</div>
+        </div>
+        <p class="subtitle">All offer are save and secure</p>
+          <div class="countdown" id="countdown">
+            Lmited time left: 
+            <span id="timer">00:00</span>
+        </div>
+        <button class="btn" id="apply-btn">Apply Now</button>
+    </div>
+
+        <script>
+        
+
+        
+    
+    const options = document.querySelectorAll('.option');
+    options.forEach(opt => {
+      opt.addEventListener('click', () => {
+        options.forEach(o => o.classList.remove('active'));
+        opt.classList.add('active');
+      });
+    });
+
+   
+    let time = 120; 
+    const timerEl = document.getElementById('timer');
+
+    setInterval(() => {
+      if (time > 0) {
+        time--;
+        let m = String(Math.floor(time / 60)).padStart(2, '0');
+        let s = String(time % 60).padStart(2, '0');
+        timerEl.textContent = `${m}:${s}`;
+      }
+    }, 1000);
+
+    document.getElementById('apply-btn').addEventListener('click', () => {
+      window.location.href = "https://mobilegigo.com/";
+    });
+  
+    </script>
+   
+</body>
+</html>
