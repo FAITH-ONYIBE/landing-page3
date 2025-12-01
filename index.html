@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apply and Win</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Offer Landing Page</title>
+<title>Apply to win free money</title>
     
     <meta name="description" content="Apply now and stand a chance to win amazing prizes. Limited slots available!">
 
@@ -24,59 +25,57 @@
    
     <link rel="preload" href="style.css" as="style">
     <link rel="stylesheet" href="style.css">
-
-    <link rel="stylesheet" href="style.css">
+   
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="container">
-         <img src="logo.png" width="150">
-         <h2>How much do you need?</h2>
-         <div class="options" id="options">
-            <div class="option">₦2,000</div>
-            <div class="option">₦5,000</div>
-            <div class="option">₦10,000</div>
-            <div class="option">₦20,000</div>
-        </div>
-        <p class="subtitle">All offer are save and secure</p>
-          <div class="countdown" id="countdown">
-            Lmited time left: 
-            <span id="timer">00:00</span>
-        </div>
-        <button class="btn" id="apply-btn">Apply Now</button>
+
+<div class="box">
+      <img src="/logo.png">
+
+  
+    <h1>Congratulations!</h1>
+    <p>Are you 18 years and above?</p>
+
+    <button class="btn yes" onclick="window.location.href='https://mobilegigo.com/'">YES</button>
+    <button class="btn no" onclick="window.location.href='https://mobilegigo.com/'">NO</button>
+
+    <p class="timer" id="timer">Limited time left: 02:00</p>
+
+   
+    <h2>How much do you need?</h2>
+
+    <div style="display:flex; flex-wrap:wrap; justify-content:center;">
+        <button class="amount-btn" onclick="window.location.href='https://mobilegigo.com/'">₦10,000</button>
+        <button class="amount-btn" onclick="window.location.href='https://mobilegigo.com/'">₦20,000</button>
+        <button class="amount-btn" onclick="window.location.href='https://mobilegigo.com/'">₦50,000</button>
+        <button class="amount-btn" onclick="window.location.href='https://mobilegigo.com/'">₦100,000</button>
     </div>
 
-        <script>
-        
-
-        
-    
-    const options = document.querySelectorAll('.option');
-    options.forEach(opt => {
-      opt.addEventListener('click', () => {
-        options.forEach(o => o.classList.remove('active'));
-        opt.classList.add('active');
-      });
-    });
+    <p>All offers are safe and secure</p>
 
    
-    let time = 120; 
-    const timerEl = document.getElementById('timer');
+    <button class="apply" onclick="window.location.href='https://mobilegigo.com/'">
+        Apply Now
+    </button>
 
-    setInterval(() => {
-      if (time > 0) {
-        time--;
-        let m = String(Math.floor(time / 60)).padStart(2, '0');
-        let s = String(time % 60).padStart(2, '0');
-        timerEl.textContent = `${m}:${s}`;
-      }
-    }, 1000);
+</div>
 
-    document.getElementById('apply-btn').addEventListener('click', () => {
-      window.location.href = "https://mobilegigo.com/";
-    });
-  
-    </script>
-   
+
+<script>
+let timer = 120;
+
+setInterval(() => {
+    let min = String(parseInt(timer / 60)).padStart(2, "0");
+    let sec = String(timer % 60).padStart(2, "0");
+
+    document.getElementById("timer").textContent =
+        `Limited time left: ${min}:${sec}`;
+
+    if (timer > 0) timer--;
+}, 1000);
+</script>
+
 </body>
 </html>
